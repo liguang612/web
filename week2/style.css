@@ -1,0 +1,118 @@
+#avatar {
+    border-radius: 40px;
+    height: 80px;
+    left: 7%;
+    position: absolute;
+    top: calc(50% - 40px);
+    z-index: 1;
+}
+
+#basic {
+    height: 55%;
+}
+
+#basic-info {
+    padding: 20px;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.family {
+    padding-left: 10px;
+}
+
+h3 {
+    margin-left: 19%;
+    margin-right: 19%;
+}
+
+.image {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-panel {
+    border: 10px;
+    font-size: 15px;
+    margin-left: 19%;
+    margin-right: 15px;
+    width: 20%;
+}
+
+.main {
+    display: flex;
+}
+
+.profile {
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 10%);
+    margin-bottom: 15px;
+    position: relative;
+}
+
+#image {
+    height: 50%;
+}
+
+.right-panel {
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 10%);
+    font-size: 15px;
+    margin-right: 19%;
+    padding: 20px;
+    width: 50%;
+}
+
+#study-info {
+    background-color: white;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.tab {
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+}
+
+table {
+    margin-left: 20px;
+    width: 100%;
+}
+
+.tablinks {
+    background-color: inherit;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-right: none;
+    cursor: pointer;
+    float: left;
+    font-size: 14px;
+    outline: none;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tabcontent {
+    width: 100%;
+}
+
+#wallpaper-image {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
