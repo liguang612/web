@@ -24,10 +24,10 @@
             </div>
             <div class="profile" id="study-info">
                 <div class="tab">
-                    <button class="tablinks" style="color: #409eff;">Trạng thái</button>
-                    <button class="tablinks" style="border-right: 1px solid #ccc;">Quản lý</button>
+                    <button class="tablinks" onclick="openTab(event, 'tabcontent', 'status')" style="color: #409eff;">Trạng thái</button>
+                    <button class="tablinks" onclick="openTab(event, 'tabcontent', 'manage')" style="border-right: 1px solid #ccc;">Quản lý</button>
                 </div>
-                <div class="tabcontent" style="line-height: 0.5; padding-left: 12px;">
+                <div class="tabcontent" id="status" style="line-height: 0.5; padding-left: 12px;">
                     <p>Trạng thái học tập: <strong style="color: rgb(0, 150, 136)">Học</strong></p>
                     <p>CPA: 3.75</p>
                     <p>Nợ: 0 TC</p>
@@ -35,16 +35,17 @@
                     <p>Mức cảnh báo: M0</p>
                     <p>Trình độ: 3</p>
                 </div>
+                <div class="tabcontent" id="manage"></div>
             </div>
         </div>
         <div class="right-panel" style="width: 60%;">
             <div class="tab">
-                <button class="tablinks" style="color: #409eff;">Lý lịch</button>
-                <button class="tablinks">Quyết định</button>
-                <button class="tablinks">Khen thưởng</button>
-                <button class="tablinks" style="border-right: 1px solid #ccc;">Liên hệ</button>
+                <button class="tablinks" onclick="openTab(event, 'tabcontent2', 'private-info')" style="color: #409eff;">Lý lịch</button>
+                <button class="tablinks" onclick="openTab(event, 'tabcontent2', 'policy')">Quyết định</button>
+                <button class="tablinks" onclick="openTab(event, 'tabcontent2', 'award')">Khen thưởng</button>
+                <button class="tablinks" onclick="openTab(event, 'tabcontent2', 'contact')" style="border-right: 1px solid #ccc;">Liên hệ</button>
             </div>
-            <div class="tabcontent">
+            <div class="tabcontent2" id="private-info">
                 <h4>Thông tin cá nhân</h4>
                 <br>
                 <table>
@@ -100,11 +101,15 @@
                     </tr>
                 </table>
             </div>
+            <div class="tabcontent" id="policy"></div>
+            <div class="tabcontent" id="award"></div>
+            <div class="tabcontent" id="contact"></div>
         </div>
     </div>
     <h3>Biểu đồ học tập</h3>
     <div class="image"><img class="image" src="image/study-graph.png" alt="Biểu đồ học tập"></div>
     <h3>Biểu đồ rèn luyện</h3>
     <div class="image"><img class="image" src="image/conduct-graph.png" alt="Biểu đồ rèn luyện"></div>
+    <script src="event.js"></script>
 </body>
 </html>
