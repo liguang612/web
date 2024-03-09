@@ -1,0 +1,10 @@
+.main {
+    align-items: center;
+    height: 50%;
+    margin: 25%;
+    width: 100%;
+}
+
+#notify {
+    color: red;
+}
