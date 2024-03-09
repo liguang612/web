@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <h1>Đăng ký</h1>
+        <p>Nhanh chóng và dễ dàng</p>
+        <hr>
+        <div class="name">
+            <input type="text" name="first-name" id="first-name" onchange="resetBorder('first-name')" placeholder="Họ">
+            <div class="sized-box" style="width: 12px;"></div>
+            <input type="text" name="surname" id="surname" onchange="resetBorder('surname')" placeholder="Tên">
+        </div>
+        <div class="sized-box" style="height: 10px;"></div>
+        <input type="text" name="email-mobile" id="email-mobile" onchange="resetBorder('email-mobile')" placeholder="Số di động hoặc email">
+        <div class="sized-box" style="height: 10px;"></div>
+        <input type="password" name="new-password" id="new-password" onchange="resetBorder('new-password')" placeholder="Mật khẩu mới">
+        <p class="suggestion">Ngày sinh <img class="hint" id="dob" onclick="showHint('dob-hint')" src="./image/hint.png" title="Nhấp chuột để biết thêm thông tin"></p>
+        <div style="display: flex;">
+            <div class="popup" id="dob-hint">
+                <p class="suggestion"><b>Cung cấp sinh nhật của bạn</b> giúp đảm bảo bạn có được trải nghiệm Facebook phù hợp với độ tuổi của mình. Nếu bạn muốn thay đổi người nhìn thấy thông tin này, hãy đi tới phần Giới thiệu trên trang cá nhân của bạn. Để biết thêm chi tiết, vui lòng truy cập vào Chính sách quyền riêng tư của chúng tôi.</p>
+            </div>
+            <select name="day" id="day"></select>
+            <div class="sized-box" style="width: 12px;"></div>
+            <select name="month" id="month" onchange="updateDay()"></select>
+            <div class="sized-box" style="width: 12px;"></div>
+            <select name="year" id="year" onchange="updateDay()"></select>
+        </div>
+        <p class="suggestion">Giới tính <img class="hint" id="gender" onclick="showHint('gender-hint')" src="./image/hint.png" title="Nhấp chuột để biết thêm thông tin"></p>
+        <div style="align-items: center; display: flex;">
+            <div class="popup" id="gender-hint">
+                <p class="suggestion">Bạn có thể thay đổi người nhìn thấy giới tính của mình trên trang cá nhân vào lúc khác. Chọn Tùy chỉnh nếu bạn thuộc giới tính khác hoặc không muốn tiết lộ.</p>
+            </div>
+            <div class="checkbox">
+                <label for="male">Nam</label>
+                <input id="male" name="gender-checkbox" onchange="resetBorderOfCheckbox()" type="radio" value="male">
+            </div>
+            <div class="sized-box" style="width: 12px;"></div>
+            <div class="checkbox">
+                <label for="female">Nữ</label>
+                <input id="female" name="gender-checkbox" onchange="resetBorderOfCheckbox()" type="radio" value="female">
+            </div>
+            <div class="sized-box" style="width: 12px;"></div>
+            <div class="checkbox">
+                <label for="custom">Tùy chỉnh</label>
+                <input id="custom" name="gender-checkbox" onchange="resetBorderOfCheckbox()" type="radio" value="custom">
+            </div>
+        </div>
+        <p class="suggestion">Những người dùng dịch vụ của chúng tôi có thể đã tải thông tin liên hệ của bạn lên Facebook. Tìm hiểu thêm.</p>
+        <p class="suggestion">Bằng cách nhấp vào Đăng ký, bạn đồng ý với Điều khoản, Chính sách quyền riêng tư và Chính sách cookie của chúng tôi. Bạn có thể nhận được thông báo của chúng tôi qua SMS và hủy nhận bất kỳ lúc nào.</p>
+        <br>
+        <p class="suggestion" id="notify" style="color: red;"></p>
+        <br>
+        <div style="display: flex; justify-content: center; width: 100%;">
+            <button onclick="submit()">Đăng ký</button>
+        </div>
+    </div>
+    <script src="event.js"></script>
+</body>
+</html>
