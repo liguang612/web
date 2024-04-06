@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18.0.0/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18.0.0/umd/react-dom.production.min.js"></script> 
+    <script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const cars =['BMW', 'Honda', 'Mazda', 'Volvo']
+
+        function List({data, children}) {
+            return <ul>
+                {data.map((value, index) => children(value, index))}
+            </ul>
+        }
+        
+        function App({title, content}) {
+            return (
+                <List data={cars}>{(value, index) => <li>{index}: {value}</li>}</List>
+            )
+        }
+
+        ReactDOM.render(<App title="Welcome" content="Goodbye" />, document.getElementById("root"));
+    </script>
+</body>
+</html>
