@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React.createElement()</title>
+    <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        // DOM
+        const ulDOM = document.createElement('ul');
+        const liDOM1 = document.createElement('li');
+        const liDOM2 = document.createElement('li');
+
+        liDOM1.id = 'li-1';
+        liDOM1.innerText = 'ReactJS';
+
+        liDOM2.id = 'li-2';
+        liDOM2.innerText = 'NodeJS';
+
+        ulDOM.appendChild(liDOM1);
+        ulDOM.appendChild(liDOM2);
+        ulDOM.id = "ul-id";
+        ulDOM.style.color = "red";
+        ulDOM.style.fontSize = "30px"
+
+        document.body.appendChild(ulDOM);
+
+        // React
+        const ulReact = React.createElement('ul', {id: "ul-id", style: "color: red; font-size:30px"},
+            React.createElement('li', null, 'ReactJS'),
+            React.createElement('li', null, 'NodeJS')
+        )
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Socket.IO chat</title>
+</head>
+<body>
+    <h1 id="yourname"></h1> <!-- display name -->
+    <ul id="messages"></ul> <!-- display list messages -->
+    <form id="form" action="">
+        <input id="input" autocomplete="off"> <button>Send</button>
+    </form>
+    <!-- load socket.io script from node_modules -->
+    <script src="https://cdn.socket.io/4.4.0/socket.io.min.js"></script>
+    <script>
+        const socket = io();
+        const messages = document.getElementById("messages");
+        const form = document.getElementById("form");
+        const input = document.getElementById("input");
+        const name = document.getElementById("yourname");
+
+        // send msg to server
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            if (input.value) {
+                socket.emit("chat", input.value);
+                input.value = "";
+            }
+        });
+
+        // receive msg from server
+        socket.on("sendMsg", (username, msg) => {
+            const item = document.createElement("li");
+            item.textContent = `${username}: ${msg}`;
+            messages.appendChild(item);
+            window.scrollTo(0, document.body.scrollHeight);
+        });
+    </script>
+</body>
+</html>
